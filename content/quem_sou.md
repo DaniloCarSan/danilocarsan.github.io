@@ -9,7 +9,8 @@ Olá, meu nome é Danilo, sou desenvolvedor de software e apaixonado por tecnolo
 
 ## 📱 Contato
 <div>
-  <a href = "mailto:danilocarsan@gmail.com@gmail.com">
+  <center>
+    <a href = "mailto:danilocarsan@gmail.com@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank">
   </a>
   <a href="https://www.linkedin.com/in/danilo-santos-14aa28128/" target="_blank">
@@ -21,5 +22,6 @@ Olá, meu nome é Danilo, sou desenvolvedor de software e apaixonado por tecnolo
   <a ref="https://www.facebook.com/profile.php?id=100011344722914" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" target="_blank">
   </a>
+  </center>
 </div>
 
