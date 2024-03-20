@@ -18,3 +18,7 @@ Olá! Seja bem-vindo, seu destino definitivo para descobrir e explorar sobre o d
 É isso, fique a vontade para explorar os conteúdos e aprender junto comigo, se tiver duvida ou quiser bater um papo entre em contato comigo. 
 
 Boa sorte na sua jornada !
+
+<script src="https://giscus.app/client.js" data-repo="DaniloCarSan/danilocarsan.github.io" data-repo-id="R_kgDOLixoLQ"
+data-category="General" data-category-id="DIC_kwDOLixoLc4CeGqc" data-mapping="title"data-strict="1"data-reactions-enabled="1"data-emit-metadata="0"data-input-position="bottom"data-theme="dark"data-lang="pt"crossorigin="anonymous"async>
+</script>
