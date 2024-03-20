@@ -14,11 +14,3 @@ Olá! Seja bem-vindo, seu destino definitivo para descobrir e explorar o vasto u
 2. **Tutoriais Passo a Passo**: Aprenda fazendo com nossos tutoriais detalhados, projetados para ajudá-lo a dominar novas habilidades e conceitos de desenvolvimento de software.
 
 3. **Dicas Práticas**: Descubra dicas práticas e truques úteis que podem melhorar sua produtividade, eficiência e qualidade de código.
-
-#### Nossas Categorias Principais:
-
-- Desenvolvimento Web
-- Desenvolvimento de Aplicativos Móveis
-- Deoploy e Infraestrutura
-- Arquitetura de Software
-- E muito mais!
