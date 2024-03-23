@@ -15,7 +15,7 @@ const config: QuartzConfig = {
       tagId: "G-SRTBP45KEC",
       provider: "google",
     },
-    locale: "en-US",
+    locale: "pt-BR",
     baseUrl: "https://danilocarsan.github.io/",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
