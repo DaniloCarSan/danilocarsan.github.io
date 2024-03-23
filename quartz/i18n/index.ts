@@ -13,6 +13,7 @@ import ru from "./locales/ru-RU"
 import ko from "./locales/ko-KR"
 import zh from "./locales/zh-CN"
 import vi from "./locales/vi-VN"
+import ptBR from "./locales/pt-BR"
 
 export const TRANSLATIONS = {
   "en-US": en,
@@ -47,6 +48,7 @@ export const TRANSLATIONS = {
   "ar-MR": ar,
   "uk-UA": uk,
   "ru-RU": ru,
+  "pt-BR": ptBR,
   "ko-KR": ko,
   "zh-CN": zh,
   "vi-VN": vi,
