@@ -250,3 +250,11 @@ Parabéns seu blog foi publicado, para acessar clique no link mostrado no card d
 ![Parabéns](./../../../images/2024/03/23/26.png)
 
 ![Parabéns](./../../../images/2024/03/23/27.png)
+
+
+# Referências
+
+- [Quartz Documentação](https://quartz.jzhao.xyz/)
+- [Github Pages Documentação](https://pages.github.com/)
+- [Branch "x" is not allowed to deploy to github-pages due to environment protection rules](https://github.com/orgs/community/discussions/39054)
+- [How to publish your notes for free with Quartz](https://youtu.be/6s6DT1yN4dw?si=OFLyaXoqnDVrF75B)
