@@ -136,7 +136,9 @@ Agora vamos realizar a configuração do Github Pages para que possamos publicar
 4 - Agora cole o seguinte conteúdo dentro do arquivo **deploy.yml**, esse arquivo contem ás configurações de build e deploy de nosso blog, elas são utilizadas pelo Github Actions para mais informações e detalhes você pode estar lendo a documentação:
 
 GitHub Actions: https://github.com/features/actions
+
 Github Pages: https://pages.github.com/
+
 Quartz: https://quartz.jzhao.xyz/hosting
 
 ````
