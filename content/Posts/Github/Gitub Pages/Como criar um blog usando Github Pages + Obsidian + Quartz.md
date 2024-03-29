@@ -7,9 +7,9 @@ Olá como anda, se você chegou aqui então provavelmente está procurando um je
 
 Lembrando que essa é um solução que não possui tantos recursos como por exemplo um Wordpress, mas é uma ótima solução para começar e com zero custo. Para que isso fosse possível utilizaremos 3 principais ferramentas.
 
-### Ferramentas
+# Ferramentas
 
-#### Github Pages
+### Github Pages
 
 O Github Pages é um serviço do Github que nos possibilita hospedar sites estáticos, comumente utilizado para hospedar documentação dos projetos nos repositórios git, ele nos possibilita renderizar tanto páginas HTML quanto em Markdown.
 
@@ -25,7 +25,7 @@ O Quartz é um gerador de site estáticos, o pulo do gato é que ele será encar
 
 **Documentação:** https://quartz.jzhao.xyz/    **Github:** https://github.com/jackyzha0/quartz
 
-### Fluxo de Postagem
+# Fluxo de Postagem
 
 ![Fluxo](./../../../images/2024/03/23/1.png)
 
@@ -33,7 +33,7 @@ O Quartz é um gerador de site estáticos, o pulo do gato é que ele será encar
 2. Fazer o commit e fazer o push para seu repositório online
 3. Rodar pipeline no GithubAction para fazer o deploy das alterações
 
-### Configuração do repositório
+# Configuração do repositório
 
 1 - Para começar primeiramente vamos precisar que você entre no repositório do Quartz e faça um fork do projeto e que o repositório esteja publico. Não esqueça de dar estrelinha no projeto.
 
@@ -76,7 +76,7 @@ http://localhost:8080/
 Agora que nosso blog está rodando, vamos pular para a configuração do Obsidian, depois voltamos para nosso editor e faremos algumas alterações em nosso projeto. Pois como você pode ver, como não há conteúdo na pasta  **/content** do nosso repositório essa mensagem de 404 é lançada.
 
 
-### Configurando o Obsidian
+# Configurando o Obsidian
 
 Estou pressupondo que você já fez a instalação do Obsidian e o configurou, não vou me ater a formatação e usabilidade da ferramenta pois já tem bastante conteúdo na internet sobre isso, nosso ponto principal aqui é a criação de um novo cofre. 
 
@@ -98,7 +98,7 @@ Estou pressupondo que você já fez a instalação do Obsidian e o configurou, n
 5 - Agora que os arquivos estão sendo salvos no lugar adequado vamos conferir o resultado em nosso navegador, recarregue página e  veja que nosso blog já está funcionando. Para teste crie novos pasta/arquivos/conteúdo e veja a mágica acontecer. 
 ![Blog](./../../../images/2024/03/23/9.png)
 
-### Removendo arquivos do projeto
+# Removendo arquivos do projeto
 
 Como realizamos um fork do repositório principal, há alguns arquivos que precisamos remover/modificar que não usaremos e que serverm para
 gerenciamento do projeto principal. Segue a lista a abaixo:
@@ -108,7 +108,7 @@ gerenciamento do projeto principal. Segue a lista a abaixo:
 3 - Remover todos os arquivos da pasta **.github**
 
 
-### Configurando Github Pages
+# Configurando Github Pages
 
 Agora vamos realizar a configuração do Github Pages para que possamos publicar nosso blog estatico online, siga os passos a baixo.
 
@@ -211,31 +211,31 @@ git push origin main
 
 ![Default branch](./../../../images/2024/03/23/16.png)
 
-9 - Agora que não há nenhum ambiente configurado clique em **New environment**
+10 - Agora que não há nenhum ambiente configurado clique em **New environment**
 
 ![New environment](./../../../images/2024/03/23/17.png)
 
-9 - Agora de um nome ao seu ambiente, no meu caso estou dando o nome de: **github-pages**
+11 - Agora de um nome ao seu ambiente, no meu caso estou dando o nome de: **github-pages**
 
 ![New environment](./../../../images/2024/03/23/18.png)
 
-10 - Após criádo seu ambiente precisamos definir a branch para esse ambiente, para fazer isso
+12 - Após criádo seu ambiente precisamos definir a branch para esse ambiente, para fazer isso
 dentro do ambiente que foi criádo no passo anterior, na seção **Deployment branches and tags**
 clique no botão **No restriction** e depois selecione **Selected branchs and tags**.
 
 ![Selected branchs and tags](./../../../images/2024/03/23/19.png)
 
-11 - Agora adicione a branch main clicando na opção **Add deployment branch or tag rule**
+13 - Agora adicione a branch main clicando na opção **Add deployment branch or tag rule**
 
 ![Selected branchs and tags](./../../../images/2024/03/23/20.png)
 ![Selected branchs and tags](./../../../images/2024/03/23/21.png)
 
-12 - Como último passo volte até a aba **Actions** do seu repositório então selecione o workflow que deu falha
+14 - Como último passo volte até a aba **Actions** do seu repositório então selecione o workflow que deu falha
 
 ![Actions](./../../../images/2024/03/23/22.png)
 ![Actions](./../../../images/2024/03/23/23.png)
 
-13 - No canto superior direito clique em **Re-run jobs** então selecione a opçao **Re-run all jobs**, então seus trabalhos serão executados novamente.
+15 - No canto superior direito clique em **Re-run jobs** então selecione a opçao **Re-run all jobs**, então seus trabalhos serão executados novamente.
 ![Re-run all jobs](./../../../images/2024/03/23/24.png)
 ![Re-run all jobs](./../../../images/2024/03/23/25.png)
 
