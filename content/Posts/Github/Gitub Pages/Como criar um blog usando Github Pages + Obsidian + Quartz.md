@@ -127,7 +127,7 @@ Agora vamos realizar a configuração do Github Pages para que possamos publicar
 
 ![Page](./../../../images/2024/03/23/11.png)
 
-3 - Na pagina do Github Pages você deve fazer alguma configurações, aprimeira e mais importante é selecionar a origin em nosso **Build and deployment** no nosso caso estaremos utilizando o Github Actions, por isso o selecione.
+3 - Na pagina do Github Pages você deve fazer alguma configurações, a primeira e mais importante é selecionar a origen em nosso **Build and deployment**, no nosso caso estaremos utilizando o **Github Actions,** por isso o selecione.
 
 ![Build and deployment](./../../../images/2024/03/23/12.png)
 
@@ -135,7 +135,7 @@ Agora vamos realizar a configuração do Github Pages para que possamos publicar
 
 ![deploy.yml](./../../../images/2024/03/23/13.png)
 
-4 - Agora cole o seguinte conteúdo dentro do arquivo **deploy.yml**, esse arquivo contem ás configurações de build e deploy de nosso blog, elas são utilizadas pelo Github Actions para mais informações e detalhes você pode estar lendo a documentação:
+4 - Agora cole o seguinte conteúdo dentro do arquivo **deploy.yml**, esse arquivo contem ás configurações de build e deploy de nosso blog, elas são utilizadas pelo Github Actions, para mais informações e detalhes você pode estar lendo a documentação:
 
 GitHub Actions: https://github.com/features/actions
 
@@ -199,7 +199,7 @@ git commit -m "configurando github actions"
 git push
 ````
 
-6 - Se você entende um pouco do Github Actions e também de  uma olhada no arquivo, percebeu que nosso Gihub Actions
+6 - Se você entende um pouco do Github Actions e também deu  uma olhada no arquivo, percebeu que nosso Gihub Actions
 não foi executado, isso correu porque quando você fez o fork do repositório principal a branch principal do repositório é a **v4**, para deixar-mos como principal a branch **main** vamos criar um nova branch.
 
 ````
