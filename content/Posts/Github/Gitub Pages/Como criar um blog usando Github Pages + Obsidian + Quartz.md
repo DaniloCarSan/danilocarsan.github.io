@@ -19,12 +19,12 @@ Lembrando que essa é um solução que não possui tantos recursos como por exem
 O Github Pages é um serviço do Github que nos possibilita hospedar sites estáticos, comumente utilizado para hospedar documentação dos projetos nos repositórios git, ele nos possibilita renderizar tanto páginas HTML quanto em Markdown.
 
 **Site oficial:** https://pages.github.com/
-#### Obsidian
+### Obsidian
 
 O Obsidian é um aplicativo de anotação, o segredo é que ele gera os arquivo em Markdown uma peça chave para novo propósito.
 
 **Site oficial:** https://obsidian.md/
-#### Quartz
+### Quartz
 
 O Quartz é um gerador de site estáticos, o pulo do gato é que ele será encarregado de pegar nosso arquivos de anotações gerado em Markdown pelo nosso Obsidian e converterá em HTML, só que ele não faz apenas isso. Ele é customizável e adiciona algumas funcionalidade ao nosso blog como grade de laytout, menus, barra de busca, tema escuro e claro, além de outras customizações que você pode estar fazendo. Se preferir de uma olhada na documentação para mais detalhes e não se esqueça de dar uma estrelinha no repositório do projeto.
 
