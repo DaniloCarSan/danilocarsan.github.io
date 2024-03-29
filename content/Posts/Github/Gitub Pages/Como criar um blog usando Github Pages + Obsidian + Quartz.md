@@ -109,7 +109,9 @@ Como realizamos um fork do repositório principal, há alguns arquivos que preci
 gerenciamento do projeto principal. Segue a lista a abaixo:
 
 1 - Remover a pasta **docs** (fica a seu críterio)
+
 2 - Editar o README.md 
+
 3 - Remover todos os arquivos da pasta **.github**
 
 
