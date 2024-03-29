@@ -1,6 +1,11 @@
 ---
 title: Como criar um blog usando Github Pages + Obsidian + Quartz
 date: 2024-03-24
+tags:
+    - Github Pages
+    - Obsidian
+    - Quartz
+    - Tutorial
 ---
 
 Olá como anda, se você chegou aqui então provavelmente está procurando um jeito de construir seu blog pessoal e começar a publicar suas ideias e compartilhar seu conhecimento. Como essa é minha primeira publicação, não podia deixar escrever como foi que eu fiz para configurar este blog. 
