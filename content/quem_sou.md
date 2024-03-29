@@ -5,7 +5,7 @@ date: 2023-03-19
 
 <center> <img src="https://avatars.githubusercontent.com/u/29821188"> </center>
 
-Olá, meu nome é Danilo, sou desenvolvedor de software e apaixonado por tecnologia. Atualmente trabalho como desenvolvedor Fullstack este é o meu blog pessoal onde compartilho um pouco do meu conhecimento e experiências. Espero que você goste do conteúdo e que ele possa te ajudar de alguma forma.
+Olá, meu nome é Danilo, sou desenvolvedor Fullstack, este é o meu blog pessoal onde compartilho um pouco do meu conhecimento e experiências. Espero que você goste do conteúdo e que ele possa te ajudar de alguma forma.
 
 
 ## 📱 Contato
