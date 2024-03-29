@@ -44,7 +44,7 @@ O Quartz é um gerador de site estáticos, o pulo do gato é que ele será encar
 
 ![Fork](./../../../images/2024/03/23/2.png)
 
-Nessa parte é essencial que você coloque o nome se seu usuário do github mais sufixo **.github.io** para que o Github entenda que esse repositório funcionará como um site estático. No meu caso ficara assim, pois já tenho um blog configurado:
+Nessa parte é essencial que você coloque o nome de seu usuário do github mais sufixo **.github.io** para que o Github entenda que esse repositório funcionará como um site estático. No meu caso ficara assim, pois já tenho um blog configurado:
 
 ```
 meublog.github.io
