@@ -96,7 +96,7 @@ Estou pressupondo que você já fez a instalação do Obsidian e o configurou, n
 3 - Para verificar que tudo ocorreu bem, comece criando um arquivo com um conteúdo, crie um arquivo com o nome **index** pois o Quartz precisa que este arquivo esteja presente. Depois crie um segundo arquivo com o nome de sua preferência
 ![Pagina index](./../../../images/2024/03/23/7.png)
 
-4- Após ter criando alguns arquivos volte para seu editor de código e verifique a pasta contente, deve aparecer os arquivos de configuração do Obsidian e os arquivos que você criou.
+4- Após ter criando alguns arquivos volte para seu editor de código e verifique a pasta **content**, deve aparecer os arquivos de configuração do Obsidian e os arquivos que você criou.
 
 ![Arquicos pasta content](./../../../images/2024/03/23/8.png)
 
