@@ -4,8 +4,9 @@ date: 2024-03-30
 tags:
     - AWS
     - Code Commit
-    - Git
     - Cloud9
+    - Git
+    - Tutorial
 ---
 
 Olá, espero que esteja bem ! 
