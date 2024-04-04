@@ -14,7 +14,7 @@ tags:
 
 Olá, espero que esteja bem ! 
 
-No post de hoje vou ensinar como configurar um ambiente de desenvolvimento utilizando o Cloud9, Code Commit e o Laravel Sail. O principal beneficio é poder acessar seu ambiente de qualquer lugar apenas necessitando de internet e um navegador. Também temos o benefício de ter um ambiente totalmente integrado com os serviços da AWS. Uma coisa que precisa entender é que isso vai funcionar para quase qualquer ambiente mas facilitara muito sua vida se seu ambiente já estiver utilizando Docker.
+No post de hoje vamos ver como configurar um ambiente de desenvolvimento utilizando o Cloud9, Code Commit e o Laravel Sail. O principal benefício é poder acessar seu ambiente de qualquer lugar apenas necessitando de internet e um navegador. Também temos o benefício de ter um ambiente totalmente integrado com os serviços da AWS. Uma coisa que precisa entender é que isso vai funcionar para quase qualquer ambiente mas facilitara muito se seu ambiente já estiver utilizando Docker.
 
 Vamos lá !
 
