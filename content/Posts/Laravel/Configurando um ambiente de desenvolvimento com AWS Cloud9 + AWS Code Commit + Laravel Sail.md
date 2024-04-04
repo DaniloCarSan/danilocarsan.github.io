@@ -178,7 +178,11 @@ Bem é isso, espero que tenha gostado e tenha lhe agregado em algo, caso tenha d
 # Referências
 
 [Instalação docker compose](https://docs.docker.com/compose/install/linux/)
+
 [Composer instalação](https://getcomposer.org/download/)
+
 [Laravel Sail instalação](https://laravel.com/docs/11.x#sail-on-linux)
+
 [Instalação docker compose](https://stackoverflow.com/questions/63708035/installing-docker-compose-on-amazon-ec2-linux-2-9kb-docker-compose-file)
+
 [Cloud9 Preview](https://docs.aws.amazon.com/cloud9/latest/user-guide/app-preview.html#app-preview-preview-app)
