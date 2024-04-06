@@ -161,7 +161,9 @@ Como sempre não se esqueça de excluir os recursos para não ter dor de cabeça
 
 # Conclusão
 
-Bem é isso, espero que tenha gostado do post, talvez em um proximo post traga um continuação utilizando Larave + Sail + Cloud9. Se tiver alguma dúvida ou sugestão de post, por favor deixe nos comentários. Até a próxima.
+Bem é isso, espero que tenha gostado do post, talvez em um proximo post traga um continuação utilizando [Laravel + Sail + Cloud9](https://danilocarsan.github.io/Posts/Laravel/Configurando-um-ambiente-de-desenvolvimento-com-AWS-Cloud9-+-AWS-Code-Commit-+-Laravel-Sail). Se tiver alguma dúvida ou sugestão de post, por favor deixe nos comentários. Até a próxima.
+
+
 
 # Referências
 
