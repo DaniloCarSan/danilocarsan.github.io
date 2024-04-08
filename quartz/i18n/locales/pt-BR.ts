@@ -36,10 +36,10 @@ export default {
       createdWith: "Criado com",
     },
     graph: {
-      title: "Visualização de Gráfico",
+      title: "Visualização em Gráfo",
     },
     recentNotes: {
-      title: "Notas Recentes",
+      title: "Posts Recentes",
       seeRemainingMore: ({ remaining }) => `Ver mais ${remaining} →`,
     },
     transcludes: {
