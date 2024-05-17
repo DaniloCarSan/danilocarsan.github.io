@@ -99,27 +99,27 @@ jobs:
 5 - Agora salve o seu arquivo e faça o commit/push, navegando até aba **actions** no repositório vemos que nossa CI foi executada, entretanto obtivemos um erro, isso
 acontece pois não possuímos permissão o sufiente.
 
-![Erro](./../../images/2024/04/30/1.png)
+![Erro](./../../images/2024/05/16/1.png)
 
 6 - Para dar as permissões adequadas, navegue até **settings** do repositório, e no menu lateral esquerdo clique **actions** depois em **General** e na seção **Workflow permissions** selecione **Read and write permissions** depois clique em salvar alterações.
 
-![Permissão](./../../images/2024/04/30/2.png)
+![Permissão](./../../images/2024/05/16/2.png)
 
 5 - Agora volte para **actions** selecione seu workflow que falhou anteriormente
 
-![Workflow](./../../images/2024/04/30/3.png)
+![Workflow](./../../images/2024/05/16/3.png)
 
 6 - No canto superior direito clique no botão **Re-run jobs** e depois clique em **Re-run all jobs**, seu job será executado novamente aguarde até a execução do mesmo.
 
-![Re-run all jobs](./../../images/2024/04/30/4.png)
+![Re-run all jobs](./../../images/2024/05/16/4.png)
 
 7 -  Seus jobs devem ter sido executado com sucesso (**Run Flutter analyze and test**)
 
-![Execução da ação com sucesso](./../../images/2024/04/30/5.png)
+![Execução da ação com sucesso](./../../images/2024/05/16/5.png)
 
 8 - Podemos ver que além do job que especificamos no arquivo de configuração, também temos um job chamado **Test report results** esse job foi criado automaticamente pelo action **dorny/test-reporter@v1**, neste temos um resultado e visualização mais amigável da execução de nossos testes.
 
-![Visualização dos resultados do test](./../../images/2024/04/30/6.png)
+![Visualização dos resultados do test](./../../images/2024/05/16/6.png)
 
 # Configurando assinatura do aplicativo
 
@@ -135,7 +135,7 @@ Construir appbundle
 ````
 flutter build appbundle
 ````
-![Geração do apk e appbundle](./../../images/2024/04/30/7.png)
+![Geração do apk e appbundle](./../../images/2024/05/16/7.png)
 
 # Configurando CI / CD
 
@@ -233,7 +233,7 @@ jobs:
 então você verá que tanto teremos duas actions sendo executada. Nosso foco é na action da **CI-CD**, após entrar nela e esperar um tempo para que ela seja executada você verá
 que o job **flutter_build** na etapa **flutter build apk --split-per-abi** deu falha com o seguinte erro:
 
-![Erro na geração do apk](./../../images/2024/04/30/8.png)
+![Erro na geração do apk](./../../images/2024/05/16/8.png)
 
 Isso aconteceu pois quando você configurou a chave de assinatura do aplicativo você definiu que buscaria as configurações da chave em um arquivo chamado **key.properties** que se
 encontra no caminho **./android/key.properties**, entretando esse arquivo e a chave de assinatura não estão em nosso repositório. Como esse arquivo possui dados confidenciais de
@@ -270,28 +270,28 @@ secrets para configurar essa variáveis vamos seguir com os próximos passos.
 
 2 - Navegue até as configurações do seu repositório e na seção **Security** clique na opção **Security** e depois em **Actions**
 
-![Acessar as secrets do actions](./../../images/2024/04/30/9.png)
+![Acessar as secrets do actions](./../../images/2024/05/16/9.png)
 
 3 - Na página **Actions secrets and variables** selecione a aba **Secrets** e depois logo abaixo na seção **Repository secrets** clique em **New repository secret**
 
-![New repository secret](./../../images/2024/04/30/10.png)
+![New repository secret](./../../images/2024/05/16/10.png)
 
 4 - Na tela de criáção dos segredos você deve definir o nome da variável e o valor dela, vamos seguir criando a primeiro **STORE_PASSWORD** com o valor **123456**, depois clique em
 adicionar. Faça os mesmo passos para **KEY_PASSWORD** e **KEY_ALIAS**
 
-![Add Secret repository STORE_PASSWORD](./../../images/2024/04/30/11.png)
+![Add Secret repository STORE_PASSWORD](./../../images/2024/05/16/11.png)
 
 Ao final o resultado deve se parecer com isso:
 
-![Variáveis adicionado](./../../images/2024/04/30/12.png)
+![Variáveis adicionado](./../../images/2024/05/16/12.png)
 
 5 - Agora vamos configurar a variável **STORE_FILE**, essa configuração poderia muito bem ser estática ao criar o arquivo **key.properties** mas vamos deixar de modo dinâmico, vai de sua preferência. Como essa não é uma configuração sensivel então podemos criar ela como uma várivel normal. Então volte na pagina das **Actions secrets and variables** e selecione a aba **Variables** e depois logo abaixo na seção **Repository variables** clique em **New repository variable**
 
-![Adicionar variável](./../../images/2024/04/30/13.png)
+![Adicionar variável](./../../images/2024/05/16/13.png)
 
 6 - Na pagina de criação da variável, preencha o nome **STORE_FILE** e o valor **upload-keystore.jks**, depois clique em adicionar.
 
-![Adicionar STORE_FILE](./../../images/2024/04/30/14.png)
+![Adicionar STORE_FILE](./../../images/2024/05/16/14.png)
 
 7 - Agora que você adicionou a variável, volte no seu arquivo **ci-cd.yml** edite a linha onde obtemos a variável **STORE_FILE**, para que fique no seguinte formato, depois faça um commit e vá para as **actions** do repostitório para ver o resultado da execução
 
@@ -301,9 +301,9 @@ echo "storeFile=${GITHUB_WORKSPACE}/${{ vars.STORE_FILE }}" >> android/key.prope
 
 8 - Como você pode ver nossa **action** foi executada, nosso arquivo **key.properties** foi devidamente configurado entretanto obtivemos o seguinte erro:
 
-![arquivo key.properties](./../../images/2024/04/30/16.png)
+![arquivo key.properties](./../../images/2024/05/16/16.png)
 
-![Erro chave não encontrada](./../../images/2024/04/30/15.png)
+![Erro chave não encontrada](./../../images/2024/05/16/15.png)
 
 Como você deve ter percebido apesar de termos configurado o arquivo **key.properties** não temos o arquivo pricipal que é nossa chave de assinatura, então antes de executarmos os 
 passos de construção e assinatura do aplicativo devemos obter nossa chave de uma armazenamento externo os próximos passos vamos configurar isso.
@@ -317,7 +317,7 @@ vamos configurar um Bucket S3 na aws para armazenar nossa chave de maneria total
 1 - O primeiro passo é entrar na console da AWS, entrar no serviço de S3 e criar um bucket, você pode estar dando o nome de sua preferência. Lebrando que com as configurações padrão
 seu bucket os seu dados estão totalmente seguros e privado, entretando você pode estar configurando camadas extras de segurança como ativar o versionamento dos objetos, ativar criptografia com o KMS ou bloquear os objetos do S3 apenas para leitura isso vai de sua preferência. Feito os passos, crei o bucket.
 
-![Nome do bucket](./../../images/2024/04/30/17.png)
+![Nome do bucket](./../../images/2024/05/16/17.png)
 
 2 - Depois de criádo seu bucket entre nele e crie o seguinte caminho abaixo:
 
@@ -325,11 +325,11 @@ seu bucket os seu dados estão totalmente seguros e privado, entretando você po
 apps/[o-nome-do-seu-projeto]
 ````
 
-![Pasta do aplicativo](./../../images/2024/04/30/18.png)
+![Pasta do aplicativo](./../../images/2024/05/16/18.png)
 
 3 - Agora que seu bucket está criádo e a pasta de seu projeto também, faça o upload se sua chave de assinatura para o seu bucket S3 na pasta do projeto
 
-![Chave feita o upload](./../../images/2024/04/30/19.png)
+![Chave feita o upload](./../../images/2024/05/16/19.png)
 
 # Configurando um Usuário, Politica e Chave de Acesso no IAM
 
@@ -339,31 +339,31 @@ obrigatóriamente criar um usuário, depois disso temos que configurar um politi
 ## Usuário
 1 - Vá até o serviço do IAM, e na página principal do IAM clique em **Usuários**
 
-![IAM](./../../images/2024/04/30/20.png)
+![IAM](./../../images/2024/05/16/20.png)
 
 2 -  Na página dos usuários clique no botão **Crial usuário**
 
-![página dos usuários](./../../images/2024/04/30/21.png)
+![página dos usuários](./../../images/2024/05/16/21.png)
 
 2 - Na página de cadastro do usuário preencha apenas o nome, como este usuário vai ser apenas para afins de acesso via cli, então ele não precisa de acesso a console da
 AWS portanto não selecione a opção de acesso a console, depois clique em próximo.
 
-![página cadastro do usuário](./../../images/2024/04/30/22.png)
+![página cadastro do usuário](./../../images/2024/05/16/22.png)
 
 3 - Na próxima etapa **Definir permissões** deixe como padrão a opção **Adicionar usuário ao grupo** e clique em próximo, não vamos vincuar anexar uma política agora pois vamos criar
 uma personalizada e depois vincular a este usuário.
 
-![criar usuários permissões](./../../images/2024/04/30/23.png)
+![criar usuários permissões](./../../images/2024/05/16/23.png)
 
 4 - Na última etapa apenas revise as configurações e clique em **Criar usuário**
 
-![criar usuário revisar](./../../images/2024/04/30/24.png)
+![criar usuário revisar](./../../images/2024/05/16/24.png)
 
 ## Política
 
 1 - Para criar um política, volte na página inical do serviço de IAM e depois clique em **Políticas** e depois clique em **Criar política**
 
-![pagina de politicas](./../../images/2024/04/30/25.png)
+![pagina de politicas](./../../images/2024/05/16/25.png)
 
 2 - Na página de criação da política clique na aba **json**, copie e cole o json de configuração abaixo. Basicamente está política da acesso a opção de obter objetos do bucket mas apenas no bucket que criamos anteriormente, não se esqueça de alterar o nome do bucket para o que você criou anteriormente. Clique em próximo.
 
@@ -383,50 +383,50 @@ uma personalizada e depois vincular a este usuário.
   ]
 }
 ````
-![configurando politicas](./../../images/2024/04/30/26.png)
+![configurando politicas](./../../images/2024/05/16/26.png)
 
 3 - Agora de um nome a sua política confira as demais configurações de depois clique em **Criar política**
 
-![criando politica](./../../images/2024/04/30/27.png)
+![criando politica](./../../images/2024/05/16/27.png)
 
 4 - Agora que política foi criada, volte nos usuário e selecione o usuário criádo anteriormente, nas páginas das informações do usuário na aba **Permissões** clique em 
 **adicionar permissões**
 
-![Página do usuário onde mostra as permissões](./../../images/2024/04/30/28.png)
+![Página do usuário onde mostra as permissões](./../../images/2024/05/16/28.png)
 
 5 - Na pagina onde vamos adicionar ás permissões, selecione a opção **Anexar políticas diretamente**, depois busque pelo nome da política crianda anteriormente **GithubActionsAppKeysReadOnlyCustomPolicy**, selecione está política e clique em **Próximo**.
 
-![Anexando permissões ao usuário](./../../images/2024/04/30/29.png)
+![Anexando permissões ao usuário](./../../images/2024/05/16/29.png)
 
 6 - Confirme que você selecionou a política corretamente e clique em **Adicionar permissões** para finalizar
 
-![revisando permissões do usuário](./../../images/2024/04/30/30.png)
+![revisando permissões do usuário](./../../images/2024/05/16/30.png)
 
 ## Chave de acesso
 
 1 - Para criar a chave de acesso, volte no perfil do usuário criado anteriormente e clique na aba **Credenciais de segurança**, depois navegue até a seção **chaves de acesso**
 e clique em **Criar chave de acesso**
 
-![Credenciais de segurança](./../../images/2024/04/30/31.png)
+![Credenciais de segurança](./../../images/2024/05/16/31.png)
 
 2 - Na primeira etapa em **Casos de uso** você deve selecionar a opção **Command Line Interface (CLI)** pois vamos usar o AWS CLI para poder ter acesso aos recursos da AWS
 via linha de comando dentro de nossa pipeline. Depois selecione na opção de aceitação sobre as recomendações e clique em **Próximo**
 
-![selecionar Command Line Interface (CLI)](./../../images/2024/04/30/32.png)
+![selecionar Command Line Interface (CLI)](./../../images/2024/05/16/32.png)
 
 3 - Na última etapa coloque uma descrição do porque da chave para eventuais consultas, depois clique em **Criar chave de acesso**
 
-![Descrição da chave](./../../images/2024/04/30/33.png)
+![Descrição da chave](./../../images/2024/05/16/33.png)
 
 4 - Após criar a chave de acesso, salve **key** e a **Secret key** para podermos utilizar na configuração do AWS CLi, ou se preferir você pode estar baixando o arquico csv.
 
-![informações da chave de acesso](./../../images/2024/04/30/34.png)
+![informações da chave de acesso](./../../images/2024/05/16/34.png)
 
 # Configurando Acess key e Secret Key no repositório
 
 Nessa etapa você deve adicionar tanto a **Access Key** como a **Secrete key** nas **Secrets** do seu repositório como fizemos com a **KEY_ALIAS** e **KEY_PASSWORD**. Ao final o resultado deve ficar assim:
 
-![Configurando secrets do repositório](./../../images/2024/04/30/35.png)
+![Configurando secrets do repositório](./../../images/2024/05/16/35.png)
 
 # Configurando AWS CLI
 
@@ -558,7 +558,7 @@ jobs:
 
 4 - Como passo final faça commit push das alterações e veja os resultados, nossos teste foram executado com sucesso e tanto o apk quanto o appbundle foram criados.
 
-![Apk gerado](./../../images/2024/04/30/36.png)
+![Apk gerado](./../../images/2024/05/16/36.png)
 
 # Recomendações / Melhorias
 
