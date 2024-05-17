@@ -3,10 +3,11 @@ title: Como configurar um CI - CD com Flutter, AWS e Github Actions
 date: 2024-05-16
 tags:
     - AWS
+    - AWS IAM
     - Github Actions
     - CI/CD
     - Flutter
-    - S3
+    - AWS S3
     - Git
     - Tutorial
 ---
