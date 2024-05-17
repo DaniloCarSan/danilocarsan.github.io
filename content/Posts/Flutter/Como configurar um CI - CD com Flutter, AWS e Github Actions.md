@@ -1,5 +1,5 @@
 ---
-title: Como configurar um CI - CD com Flutter, AWS e Github Actions
+title: Como configurar uma CI - CD com Flutter, AWS e Github Actions
 date: 2024-05-16
 tags:
     - AWS
@@ -14,9 +14,9 @@ tags:
 
 Olá, espero que esteja bem !
 
-Alguns dias atrás estava procurando um solução para automatizar a execução dos teste e gerar meus arquivos de deploy de meus aplicativos flutter. Queria uma solução completa de uma CI/CD, como bom curioso procurei alguns conteúdos na internet e me deparei com o tutorial no canal da Fluterando apresentado pelo Renato Mota, engenheiro da Nubank.
+Alguns dias atrás estava procurando um solução para automatizar a execução dos teste e gerar meus arquivos de deploy de meus aplicativos Flutter. Queria uma solução completa de uma CI/CD, como bom curioso procurei alguns conteúdos na internet e me deparei com o tutorial no canal da Fluterando apresentado pelo Renato Mota, engenheiro da Nubank.
 
-Seguindo os passos tive alguns erros por conta da data de publicação do contéudo, já faz um tempinho, após conseguir rodar tudo percebi que não estava completo para minhas necessidades, umas das adições a este tutorial é o armazenamento seguro de suas chaves de assinatura em um Bucket S3 na AWS.
+Seguindo os passos tive alguns erros por conta da data de publicação do conteúdo, já faz um tempinho, após conseguir rodar tudo percebi que não estava completo para minhas necessidades, umas das adições a este tutorial é o armazenamento seguro de suas chaves de assinatura em um Bucket S3 na AWS.
 
 Bem chega de enrolação e bora para o conteúdo !
 
@@ -33,7 +33,7 @@ Bem chega de enrolação e bora para o conteúdo !
 git branch dev
 git checkout dev
 ````
-2 - Agora crei as seguintes pastas a partir da raiz do projeto
+2 - Agora crie as seguintes pastas a partir da raiz do projeto
 
 ````
 mkdir .github
@@ -44,7 +44,7 @@ Esse caminho é onde o **Github Actions** busca os arquivos de configurações, 
 
 3 - Dentro da pasta **workflows** crie um arquivo chamado **ci.yml**, nesse arquivo vamos especificar as configurações da CI.
 
-4 - No arquivo, vamos especificar o nome da action, e que essa só será executada quando houver um push e uma pull request na branch dev. Lembrando que você pode estar configurando da maneira que melhor se encaixa no seu fluxo de trabalho e de sua equipe. Também deve-se configurar os passos para execução do job principal que no caso é o **flutter_test**. Caso tenha duvidas ou queira customizar essas etapas de uma olhada na documentação do **Github Actions**. 
+4 - No arquivo, vamos especificar o nome da action, essa só será executada quando houver um push e uma pull request na branch dev. Lembrando que você pode estar configurando da maneira que melhor se encaixa no seu fluxo de trabalho e de sua equipe. Também deve-se configurar os passos para execução do job principal que no caso é o **flutter_test**. Caso tenha duvidas ou queira customizar essas etapas de uma olhada na documentação do **Github Actions**. 
 
 **arquivo ci.yml**
 ````
@@ -97,7 +97,7 @@ jobs:
           min_coverage: 80
 ````
 
-5 - Agora salve o seu arquivo e faça o commit/push, navegando até aba **actions** no repositório vemos que nossa CI foi executada, entretanto obtivemos um erro, isso
+5 - Agora salve o seu arquivo e faça o commit/push, navegando até aba **actions** no repositório, então vemos que nossa CI foi executada, entretanto obtivemos um erro, isso
 acontece pois não possuímos permissão o sufiente.
 
 ![Erro](./../../images/2024/05/16/1.png)
@@ -114,7 +114,7 @@ acontece pois não possuímos permissão o sufiente.
 
 ![Re-run all jobs](./../../images/2024/05/16/4.png)
 
-7 -  Seus jobs devem ter sido executado com sucesso (**Run Flutter analyze and test**)
+7 -  Seus jobs devem ter executado com sucesso (**Run Flutter analyze and test**)
 
 ![Execução da ação com sucesso](./../../images/2024/05/16/5.png)
 
