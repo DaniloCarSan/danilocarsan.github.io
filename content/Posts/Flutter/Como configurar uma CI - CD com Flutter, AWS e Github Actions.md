@@ -329,10 +329,10 @@ apps/[o-nome-do-seu-projeto]
 
 ![Chave feita o upload](./../../images/2024/05/16/19.png)
 
-# Configurando um Usuário, Politica e Chave de Acesso no IAM
+# Configurando um Usuário, Política e Chave de Acesso no IAM
 
 Para que possamos fazer o download da chave na pipeline no Github Actions, temos que ter um **chave de acesso** e para isso primeiramente temos que 
-obrigatóriamente criar um usuário, depois disso temos que configurar um politica de acesso ao bucket criádo na seção anterior.
+obrigatóriamente criar um usuário, depois disso temos que configurar um política de acesso ao bucket criádo na seção anterior.
 
 ## Usuário
 1 - Vá até o serviço do IAM, e na página principal do IAM clique em **Usuários**
@@ -361,7 +361,7 @@ uma personalizada e depois vincular a este usuário.
 
 1 - Para criar um política, volte na página inical do serviço de IAM e depois clique em **Políticas** e depois clique em **Criar política**
 
-![pagina de politicas](./../../images/2024/05/16/25.png)
+![pagina de políticas](./../../images/2024/05/16/25.png)
 
 2 - Na página de criação da política clique na aba **json**, copie e cole o json de configuração abaixo. Basicamente está política da acesso a opção de obter objetos do bucket mas apenas no bucket que criamos anteriormente, não se esqueça de alterar o nome do bucket para o que você criou anteriormente. Clique em próximo.
 
@@ -381,11 +381,11 @@ uma personalizada e depois vincular a este usuário.
   ]
 }
 ````
-![configurando politicas](./../../images/2024/05/16/26.png)
+![configurando políticas](./../../images/2024/05/16/26.png)
 
 3 - Agora de um nome a sua política confira as demais configurações de depois clique em **Criar política**
 
-![criando politica](./../../images/2024/05/16/27.png)
+![criando política](./../../images/2024/05/16/27.png)
 
 4 - Agora que política foi criada, volte nos usuário e selecione o usuário criádo anteriormente, nas páginas das informações do usuário na aba **Permissões** clique em 
 **adicionar permissões**
