@@ -372,10 +372,10 @@ uma personalizada e depois vincular a este usuário.
     {
       "Effect": "Allow",
       "Action": [
-        "s3:GetObject"
+        "S3:GetObject"
       ],
       "Resource": [
-        "arn:aws:s3:::SEU_BUCKET_NAME/*"
+        "arn:aws:S3:::SEU_BUCKET_NAME/*"
       ]
     }
   ]
@@ -442,16 +442,14 @@ para o nome adequado e colocar a região onde você criou seu bucket S3.
     aws-region: us-east-1
 ````
 
-2 - Agora vamos adicionar mais um passo para baixar nossa chave diretamente do s3, copie e cole o código abaixo depois do passo de configuração da AWS CLI.
+2 - Agora vamos adicionar mais um passo para baixar nossa chave diretamente do S3, copie e cole o código abaixo depois do passo de configuração da AWS CLI.
 
 ````
 - name: Baixar chave de assinatura do bucket S3
-  run: aws s3 cp s3://[NOME_DO_SEU_BUCKET]/apps/fluttercicd/upload-keystore.jks upload-keystore.jks
+  run: aws S3 cp S3://[NOME_DO_SEU_BUCKET]/apps/fluttercicd/upload-keystore.jks upload-keystore.jks
 ````
 
-Não se esqueça de
-colocar o mesmo caminho e nome da chave de acordo com a variavel de ambiente **STORE_FILE**, no meu caso a chave será baixada na raiz do meu espaço de trabalho como foi
-especificado na configurações feitas anteriormente ****.
+Não se esqueça de colocar o mesmo caminho e nome da chave de acordo com a variavel de ambiente **STORE_FILE**, no meu caso a chave será baixada na raiz do meu espaço de trabalho como foi especificado na configurações feitas anteriormente ****.
 
 ````
 echo "storeFile=${GITHUB_WORKSPACE}/${{ vars.STORE_FILE }}" >> android/key.properties
@@ -524,7 +522,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-1
       - name: Baixar chave de assinatura do bucket S3
-        run: aws s3 cp s3://app-configs-bucket/apps/fluttercicd/upload-keystore.jks  upload-keystore.jks
+        run: aws S3 cp S3://app-configs-bucket/apps/fluttercicd/upload-keystore.jks  upload-keystore.jks
       - name: Criação do arquivo key.properties
         run: |
           echo "storePassword=${{ secrets.STORE_PASSWORD }}" > android/key.properties
@@ -554,21 +552,21 @@ jobs:
           path: build/app/outputs/bundle/release/app-release.aab
 ````
 
-4 - Como passo final faça commit push das alterações e veja os resultados, nossos teste foram executado com sucesso e tanto o apk quanto o appbundle foram criados.
+4 - Como passo final faça commit/push das alterações e veja os resultados, nossos teste foram executado com sucesso e tanto o apk quanto o appbundle foram criados.
 
 ![Apk gerado](./../../images/2024/05/16/36.png)
 
 # Recomendações / Melhorias
 
 - Obter o nome do bucket dentro da pipeline atravéz de uma variável de ambiente
-- Fazer upload dos arquivos para o bucket s3
+- Fazer upload dos arquivos para o bucket S3
 - Configurar versionamento no bucket S3
-- Criptografar bucket s3 com o KMS
-- Altere a trigger para ser executada quando um release ou tag for criáda na branch main
+- Criptografar bucket S3 com o KMS
+- Alterar a trigger para ser executada quando um release ou tag for criáda na branch main
 
 # Conclusão
 
-Bem é isso obrigado por ter chegado até aqui, fique avontade para sugerir melhorias e também recomendar próximos posts.
+Bem é isso, obrigado por ter chegado até aqui, fique avontade para sugerir melhorias e também recomendar próximos posts.
 
 # Referências
 
