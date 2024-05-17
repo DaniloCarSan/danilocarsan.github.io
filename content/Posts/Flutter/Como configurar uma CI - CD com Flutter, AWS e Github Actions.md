@@ -140,16 +140,15 @@ flutter build appbundle
 
 # Configurando CI / CD
 
-Nessa etapa vamos configurar a CI/CD completa onde a CI será encarregada de executar os teste e caso tudo esteja certo então executamos nossa CD, onde geraremos nosso
+Nessa etapa vamos configurar a CI/CD completa onde a CI será encarregada de executar os testes e caso tudo esteja certo então executamos nossa CD, onde geraremos nosso
 aplicativo, isto é, o arquivo apk e o appbundle.
 
 1 - Primeriramente duplique o arquivo **ci.yml** criado anteiriormente e remomeie para**ci-cd.yml**
 
-2 - Em nosso arquivo vamos realizar algumas alterações, como adicionar um novo **job** que é responsável por gerar nossoas arquivos de build, configurar para que ele sejá
-executado apenas quando uma nova release estiver sendo lançada e que essa etapas só seja executadas se o nosso **job** de execução dos tests tenha sido executado com sucesso.
+2 - Em nosso arquivo vamos realizar algumas alterações, como adicionar um novo **job** que é responsável por gerar nossos arquivos de build, configurar para que ele sejá
+executado apenas quando uma nova release estiver sendo lançada e que essa etapas só sejam executadas se o nosso **job** de execução dos testes tenha sido executado corretamente.
 
-Arquivo deve ficar no seguinte formado abaixo, por hora vamos deixar que nossa **ci/cd** seja executada sempre que haja um commit na branch **dev** posteriormente
-vamos configurar para que seja executada apenas na branch **main**
+O arquivo deve ficar no seguinte formato abaixo, por hora vamos deixar que nossa **ci/cd** seja executada sempre que aja um commit na branch **dev**
 ````
 name: CI/CD
 on:
@@ -230,15 +229,13 @@ jobs:
           path: build/app/outputs/bundle/release/app-release.aab
 ````
 
-3 - Agora salve o arquivo **ci-cd.yml** com as alterações e faça o commit/push para o repositorio no Github, depois que você fizer isso, entre nas actions do seu repositório
-então você verá que tanto teremos duas actions sendo executada. Nosso foco é na action da **CI-CD**, após entrar nela e esperar um tempo para que ela seja executada você verá
-que o job **flutter_build** na etapa **flutter build apk --split-per-abi** deu falha com o seguinte erro:
+3 - Agora salve o arquivo **ci-cd.yml** com as alterações e faça o commit/push para o repositorio, depois que você fizer isso, entre nas actions do seu repositório.Você verá que temos duas actions sendo executadas. Nosso foco é na action da **CI-CD**, após entrar nela e esperar que ela seja executada você verá que o job **flutter_build** na etapa **flutter build apk --split-per-abi** falhou com o seguinte erro:
 
 ![Erro na geração do apk](./../../images/2024/05/16/8.png)
 
 Isso aconteceu pois quando você configurou a chave de assinatura do aplicativo você definiu que buscaria as configurações da chave em um arquivo chamado **key.properties** que se
-encontra no caminho **./android/key.properties**, entretando esse arquivo e a chave de assinatura não estão em nosso repositório. Como esse arquivo possui dados confidenciais de
-assinatura do nosso aplicativo não podemos expor ele então é recomensável que você o crie na hora do build e a chave você armazene em um local adequado.
+encontra no caminho **./android/key.properties**, entretando esse arquivo e a chave de assinatura não estão em nosso repositório. Como esse arquivo possui dados sensiveis da
+assinatura do nosso aplicativo, não podemos expor ele diretamente, então é recomensável que você o crie na hora do build e a chave você armazene em um local seguro.
 
 # Configurando arquivo key.properties
 
@@ -251,7 +248,7 @@ keyAlias=upload
 storeFile=upload-keystore.jks
 ````
 
-1 - Para criar nosso arquivo de configuração na hora do build vamos editar nosso arquivo **CI-CD** no job **flutter_build:**  e antes de baixar as depêndencias
+1 - Para criar nosso arquivo de configuração na hora do build vamos editar nosso arquivo **CI-CD** no job **flutter_build:** e antes de baixar as depêndencias
 **run: flutter pub get** vamos criar uma etapa que crie o arquivo de configuração, copie e cole o código abaixo:
 
 ````
@@ -266,10 +263,10 @@ storeFile=upload-keystore.jks
   run: cat android/key.properties
 ````
 
-No código acima você percebeu que passamos váriaveis na configuração do arquivo, essa são ás variáveis são configurados no proprópio repositório do Github em um serviço chamado
-secrets para configurar essa variáveis vamos seguir com os próximos passos.
+No código acima você percebeu que passamos váriaveis na configuração do arquivo, essas variáveis são configuradas no proprópio repositório do Github em um serviço chamado
+**secrets** para configurar essa variáveis vamos seguir com os próximos passos.
 
-2 - Navegue até as configurações do seu repositório e na seção **Security** clique na opção **Security** e depois em **Actions**
+2 - Navegue até as configurações do seu repositório e na seção **Security** clique na opção **Secrets and variables** e depois em **Actions**
 
 ![Acessar as secrets do actions](./../../images/2024/05/16/9.png)
 
@@ -277,7 +274,7 @@ secrets para configurar essa variáveis vamos seguir com os próximos passos.
 
 ![New repository secret](./../../images/2024/05/16/10.png)
 
-4 - Na tela de criáção dos segredos você deve definir o nome da variável e o valor dela, vamos seguir criando a primeiro **STORE_PASSWORD** com o valor **123456**, depois clique em
+4 - Na tela de criáção dos segredos você deve definir o nome da variável e o valor dela, vamos seguir criando a primeira **STORE_PASSWORD**, depois clique em
 adicionar. Faça os mesmo passos para **KEY_PASSWORD** e **KEY_ALIAS**
 
 ![Add Secret repository STORE_PASSWORD](./../../images/2024/05/16/11.png)
@@ -307,7 +304,7 @@ echo "storeFile=${GITHUB_WORKSPACE}/${{ vars.STORE_FILE }}" >> android/key.prope
 ![Erro chave não encontrada](./../../images/2024/05/16/15.png)
 
 Como você deve ter percebido apesar de termos configurado o arquivo **key.properties** não temos o arquivo pricipal que é nossa chave de assinatura, então antes de executarmos os 
-passos de construção e assinatura do aplicativo devemos obter nossa chave de uma armazenamento externo os próximos passos vamos configurar isso.
+passos de construção e assinatura do aplicativo devemos obter nossa chave de um armazenamento externo, nos próximos passos vamos configurar isso.
 
 # Configurando um bucket S3 na AWS
 
@@ -315,8 +312,8 @@ Nossa chave poderia ter sido convertida em base64 e salva nas **secrets** do Git
 original é mais complicado de fazer, poderiamos usar uma **action** para isso mas você não quer processos de terceiros tenham acesso a sua chave. Então para solucionar esse problema 
 vamos configurar um Bucket S3 na aws para armazenar nossa chave de maneria totalmente segura.
 
-1 - O primeiro passo é entrar na console da AWS, entrar no serviço de S3 e criar um bucket, você pode estar dando o nome de sua preferência. Lebrando que com as configurações padrão
-seu bucket os seu dados estão totalmente seguros e privado, entretando você pode estar configurando camadas extras de segurança como ativar o versionamento dos objetos, ativar criptografia com o KMS ou bloquear os objetos do S3 apenas para leitura isso vai de sua preferência. Feito os passos, crei o bucket.
+1 - O primeiro passo é entrar na console da AWS, entrar no serviço de S3 e criar um bucket, você pode estar dando o nome de sua preferência. Lembrando que com as configurações padrão
+do bucket os seu dados estão totalmente seguros e privado, entretando você pode estar configurando camadas extras de segurança como ativar o versionamento dos objetos, ativar criptografia com o KMS ou bloquear os objetos do S3 apenas para leitura isso vai de sua preferência. Feito os passos, crei o bucket.
 
 ![Nome do bucket](./../../images/2024/05/16/17.png)
 
