@@ -1,6 +1,6 @@
 
 ---
-title: P5 - Ruído Branco: melhorando sua concentração
+title: P5 - Melhorando sua concentração com ruído branco
 date: 2024-06-03
 tags:
     - Ruído branco
