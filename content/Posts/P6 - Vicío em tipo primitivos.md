@@ -113,6 +113,8 @@ $user->activeStatus()->isActive()
 $user->activeStatus()->getLabel()
 ````
 
-Ao modelarmos um sistema, temos que ficar atentos a essas pequenas coisas. Às vezes pensamos muito no macro, criando classes maiores, e esquecemos do micro. Há várias literaturas que abordam sobre isso, como o DDD, Código Limpo,  Refatoração. São boas literaturas e recomendo a leitura. Há muita coisa que fazemos, mas não percebemos que poderia ser feita e vista de uma perspectiva diferente e isso é normal, basta que você começe a obsercar esses padrões e ir evoluindo com o tempo.
+Ao modelarmos um sistema, temos que ficar atentos a essas pequenas coisas. Às vezes pensamos muito no macro, criando classes maiores, e esquecemos do micro. Há várias literaturas que abordam sobre isso, como o DDD, Código Limpo e Refatoração. São boas literaturas e recomendo a leitura.
+
+Há muita coisa que fazemos, mas não percebemos que poderia ser feita e vista de uma perspectiva diferente e isso é normal, basta que você começe a obsercar esses padrões e ir evoluindo com o tempo.
 
 Bem, é isso por hoje. Agradeço pelo tempo e até a próxima.
