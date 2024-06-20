@@ -14,7 +14,7 @@ Quando estamos desenvolvendo, é natural representar valores ou conceitos com os
 
 Em sistemas simples, que não têm conceitos muito ricos de negócio, talvez faça sentido usar apenas tipos base. Mesmo assim, você provavelmente já usa tipos mais ricos, como por exemplo um valor do tipo Date ou Datetime.
 
-Isso ocorre porque o objetivo de se criar e utilizar tipos mais ricos é a centralização de ações de validação, cálculo, transformação e centralização dos dados. Para deixar um pouco mais claro, vamos seguir o exemplo de um valor representado por um tipo Date e não uma String qualquer.
+Isso ocorre porque o objetivo de se criar e utilizar tipos mais ricos é a centralização de ações de validação, cálculo, transformação e dados. Para deixar um pouco mais claro, vamos seguir o exemplo de um valor representado por um tipo Date e não uma String qualquer.
 
 Utilizamos um valor do tipo Date porque uma data possui muitos conceitos e ações que podem ser realizadas em cima dela, como por exemplo:
 
@@ -24,7 +24,7 @@ Utilizamos um valor do tipo Date porque uma data possui muitos conceitos e açõ
 - remover tempo (minuto, hora dia....)
 
 
-Outro exemplo de que você poderia estar usando um tipo mais rico é na representação de um número de CPF. Sabemos que ele não é apenas uma lista de caracteres aleatórios, há um cálculo para a sua geração e validação, assim como a sua representação que pode ser tanto como um inteiro ou formatado com pontos e traço.
+Outro exemplo de que você poderia estar usando um tipo mais rico é na representação de um número de CPF, CNPJ, valor monetário entre outros. Levando o CPF como exemplo, sabemos que ele não é apenas uma lista de caracteres aleatórios, há um cálculo para a sua geração e validação, assim como a sua representação que pode ser tanto como um inteiro ou formatado com pontos e traço.
 
 Se utilizássemos apenas um tipo base como int ou string, perderíamos a oportunidade de centralizar tudo em apenas um objeto. Além disso, toda essa lógica provavelmente ficaria espalhada em todo o sistema, o que dificultaria a manutenção e teste.
 
@@ -113,6 +113,6 @@ $user->activeStatus()->isActive()
 $user->activeStatus()->getLabel()
 ````
 
-Ao modelarmos um sistema, temos que ficar atentos a essas pequenas coisas. Às vezes pensamos muito no macro, criando classes maiores, e esquecemos do micro. Há várias literaturas que abordam sobre isso, como o DDD e o Código Limpo. São boas literaturas e recomendo a leitura. Há muita coisa que fazemos, mas não percebemos que poderia ser feita e vista de uma perspectiva diferente.
+Ao modelarmos um sistema, temos que ficar atentos a essas pequenas coisas. Às vezes pensamos muito no macro, criando classes maiores, e esquecemos do micro. Há várias literaturas que abordam sobre isso, como o DDD, Código Limpo,  Refatoração. São boas literaturas e recomendo a leitura. Há muita coisa que fazemos, mas não percebemos que poderia ser feita e vista de uma perspectiva diferente e isso é normal, basta que você começe a obsercar esses padrões e ir evoluindo com o tempo.
 
 Bem, é isso por hoje. Agradeço pelo tempo e até a próxima.
