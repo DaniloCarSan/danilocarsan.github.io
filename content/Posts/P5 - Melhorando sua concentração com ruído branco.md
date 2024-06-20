@@ -19,6 +19,9 @@ O silêncio é em si nesse caso não é a ausência de barulho mas sim um som co
 Há alguns recursos que você pode estar utilizando como:
 
 [Ruído branco tela preta](https://youtu.be/EElQRT6UMko?si=FOfAcdnu0Z_ADK62)
+
 [A soft murmur](https://asoftmurmur.com/)
+
 [Pure Binaural Beats](https://open.spotify.com/intl-pt/artist/59wUUEob80aCZA6V0KEmM9?si=4w7T2p6cT1GYHiLkuoI2yQ)
+
 [Programação/Cyber/Codificação](https://open.spotify.com/playlist/6KBNYuKFUlb08JKlCG38jg?si=12a8f36a51624a3c)
