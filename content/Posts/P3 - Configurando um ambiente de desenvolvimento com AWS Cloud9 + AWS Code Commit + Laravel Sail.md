@@ -22,7 +22,7 @@ Vamos lá !
 
 Bem, para esse tutorial não abordarei a criação e configuração do Cloud9 + Code Commit, pois já abordei isso em um post anterior, por isso para continuar de uma olhada no post anterior
 
-[Como configurar o Code Commit + Cloud9 na AWS](https://danilocarsan.github.io/Posts/AWS/Code-Commit/Como-configurar-o-Code-Commit-+-Cloud9-na-AWS)
+[Como configurar o Code Commit + Cloud9 na AWS](https://danilocarsan.github.io/Posts/P2---Como-configurar-o-Code-Commit-+-Cloud9-na-AWS)
 
 Se você seguiu os passos do post anterior, você deve ter um repositório em seu Cloud9, caso tenha criado alguns arquivos do post anterior remova-os.
 
