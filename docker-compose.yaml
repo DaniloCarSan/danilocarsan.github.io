@@ -1,6 +1,7 @@
-version: '3'
 services:
   blog:
     build: .
+    volumes:
+      - ./content:/usr/src/app/content
     ports:
       - "8081:8080"
